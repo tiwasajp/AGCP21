@@ -1,0 +1,87 @@
+
+<div class="neo-widget__body neo-widget__body" style="width: 100%; padding: 20px;">
+	<form class="neo-form">
+		<div class="neo-form-control">
+			<div class="neo-input-group">
+				<label htmlFor="input1"> Name </label>
+				<div class="neo-input-editable__wrapper">
+					<input id="client-form-name" class="neo-input" id="input1" type="text" />
+				</div>
+			</div>
+		</div>
+		<div class="neo-form-control">
+			<div class="neo-input-group">
+				<label htmlFor="input2"> Address </label>
+				<div class="neo-input-editable__wrapper">
+					<input id="client-form-address" class="neo-input" id="input2" type="text" />
+					<button aria-label="clear input" tabindex='-1' class="neo-input-edit__icon neo-icon-end" onclick="$('#form-address').val('');return false;"></button>
+				</div>
+			</div>
+		</div>
+		<div class="neo-form-control">
+			<div class="neo-input-group">
+				<label htmlFor="input3"> Phone </label>
+				<div class="neo-input-editable__wrapper">
+					<input id="client-form-phone" class="neo-input" id="input1" type="text" />
+					<button aria-label="clear input" tabindex='-1' class="neo-input-edit__icon neo-icon-end" onclick="$('#form-name').val('');return false;"></button>
+				</div>
+			</div>
+		</div>
+		<div class="neo-form-control">
+			<div class="neo-input-group">
+				<label htmlFor="input4"> Open Reason </label>
+				<div class="neo-input-editable__wrapper">
+					<input id="client-form-reason" class="neo-input" id="input2" type="text" />
+					<button aria-label="clear input" tabindex='-1' class="neo-input-edit__icon neo-icon-end" onclick="$('#form-address').val('');return false;"></button>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<button id="form-done" class="neo-btn neo-btn-primary neo-btn-primary--default">Done</button>
+	<script>
+	$("#form-done").click(() => {
+		events.launch('emit_event', { header: header(cmsp.client), body: { type: "dialog", customerId: cmsp.client.room, agentId: cmsp.client.userId } });
+	});		
+	
+	sendForm = (field) => {
+		events.launch('emit_data', { header: header(cmsp.client), 
+			body: { media: { type: "form", form: [{field:"client-form-name", data:$("#client-form-name").val()},
+				                                  {field:"client-form-address", data:$("#client-form-address").val()},
+												  {field:"client-form-phone", data:$("#client-form-phone").val()},
+												  {field:"client-form-reason", data:$("#client-form-reason").val()},
+			                                     ], field:field } } });
+	};
+	
+	$("#client-form-name").change(() => {
+		sendForm("client-form-name");
+	});
+	
+	$("#client-form-address").change(() => {
+		sendForm("client-form-address");
+	});
+	
+	$("#client-form-phone").change(() => {
+		sendForm("client-form-phone");
+	});
+	
+	$("#client-form-reason").change(() => {
+		sendForm("client-form-reason");
+	});
+	
+	events.action("data", async (message) => {
+		console.log(`[events.action("data")] ${JSON.stringify(message)}`);
+		switch (message.body.media.type) {
+			case "form": {
+				if (cmsp.client.userId !== message.header.userId) {
+					message.body.media.form.forEach((item) => {
+						$("#" + item.field).val(item.data);
+					});
+				}
+				break;
+			}
+		}
+	});
+	</script>
+
+</div>

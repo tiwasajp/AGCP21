@@ -1,0 +1,91 @@
+<!--  Chat Client Settings -->
+<div class="neo-modal__background"></div>
+<div class="neo-modal__content" aria-modal="true" role="dialog">
+	<div class="neo-modal__info-close">
+		<button class="neo-close" onclick="$('#settings').hide();"></button>
+	</div>
+	<div class="neo-modal__header">
+		<h4>Settings</h4>
+	</div>
+	<div class="neo-modal__body">
+		<form class="neo-form row">
+			<div style="width: 50%; padding: 20px;">
+				<div class="neo-form-control">
+					<div class="neo-input-group">
+						<label for="agentId" aria-label="Addon on the right">
+							Dialogflow Agent Id
+						</label>
+						<div class="neo-input-group--addons">
+							<input id="agentId" class="neo-input" id="input-group-addon-on-right"
+								placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" role="textbox"
+								aria-label="Addon on the right" />
+						</div>
+					</div>
+				</div>
+				<div class="neo-form-control">
+					<div class="neo-input-group">
+						<label for="languageCode" aria-label="Addon on the right">
+							Dialogflow Language Code
+						</label>
+						<div class="neo-input-group--addons">
+							<input id="languageCode" class="neo-input" id="input-group-addon-on-right" placeholder="ja"
+								role="textbox" aria-label="Addon on the right" />
+						</div>
+					</div>
+				</div>
+				<div class="neo-form-control">
+					<div class="neo-input-group">
+						<label class="neo-switch" for="useDialogflow">
+							<input id="useDialogflow" type="checkbox" role="switch">
+							<i class="neo-switch__icon"></i>
+							Use Dialogflow CX for Intent-based GenAI bot responses
+						</label>
+					</div>
+				</div>
+				<div class="neo-form-control">
+					<div class="neo-input-group">
+						<label for="transLangCode" aria-label="Addon on the right">
+							Translation Language Code
+						</label>
+						<div class="neo-input-group--addons">
+							<input id="transLangCode" class="neo-input" id="input-group-addon-on-right" placeholder="xx"
+								role="textbox" aria-label="Addon on the right" />
+						</div>
+					</div>
+				</div>
+				<div class="neo-form-control">
+					<div class="neo-input-group">
+						<label class="neo-switch" for="useTranslation">
+							<input id="useTranslation" type="checkbox" role="switch">
+							<i class="neo-switch__icon"></i>
+							Translate context into this langage
+						</label>
+					</div>
+				</div>
+			</div>
+			<div style="width: 50%; padding: 20px;">
+				<div class="neo-form-control neo-form-control--textarea">
+					<div class="neo-input-group">
+						<label for="llm" aria-label="Icon form">LLM Parameters</label>
+						<div>
+							<textarea class="neo-input" placeholder="Input with right icon" role="textbox" id="llm"
+								aria-label="Input with right icon" style="line-break: anywhere;" rows="26"
+								cols="80"></textarea>
+							<div class="neo-input-textarea__helper">
+								<div class="neo-input-hint">JSON format</div>
+								<div class="neo-input-textarea__counter"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="neo-modal__footer">
+		<div class="neo-nav--right" style="margin-top: 30px; margin-right: 20px;">
+			<button id="saveSettings" type="button"
+				class="neo-btn neo-btn-primary neo-btn-primary--default neo-center neo-icon-check">Update</button>
+		</div>
+	</div>
+</div>
+<script src="settings.js" type="text/javascript"></script>

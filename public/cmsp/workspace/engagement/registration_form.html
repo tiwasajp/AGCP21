@@ -1,0 +1,125 @@
+<div style="padding: 0px; height: 25px;">
+	<h5>
+		<b>New Credit Card Registration Form</b>
+	</h5>
+</div>
+<div id="open-account-form" class="row" style="padding-left: 40px; height: 100%; background-color: #fff;">
+	<div style="margin-top: 10px; padding: 5px; width: 100%; height: 80px;">
+		<div id="open-account-steps" class="row" style="width: 90%; height: 40px; background-color: #fff;">
+			<button id="application-form" class="neo-btn neo-btn-secondary neo-btn-secondary--default neo-pulse">Application Form</button>
+			<div style="padding: 10px; width: 40px; height: 20px;">▶︎︎</div>
+			<button id="photo-shot" class="neo-btn neo-btn-secondary neo-btn-secondary--default">Photo Shot</button>
+			<div style="padding: 10px; width: 40px; height: 20px;">▶︎︎</div>
+			<button id="signature" class="neo-btn neo-btn-secondary neo-btn-secondary--default">Signature</button>
+			<div style="padding: 10px; width: 40px; height: 20px;">▶︎︎</div>
+			<button id="notification" class="neo-btn neo-btn-secondary neo-btn-secondary--default">Notification</button>
+			<div style="padding: 10px; width: 40px; height: 20px;">▶︎︎</div>
+			<button id="contract" class="neo-btn neo-btn-secondary neo-btn-secondary--default">Contract</button>
+		</div>
+	</div>
+	<div class="row">
+		<div id="customer_profile_1" style="width: 380px;">
+			<form class="neo-form">
+				<div class="neo-form-control">
+					<div class="neo-input-group">
+						<label htmlFor="input1"> Name </label>
+						<div class="neo-input-editable__wrapper">
+							<input id="agent-client-form-name" class="neo-input" id="input1" type="text" />
+						</div>
+					</div>
+				</div>
+				<div class="neo-form-control">
+					<div class="neo-input-group">
+						<label htmlFor="input2"> Address </label>
+						<div class="neo-input-editable__wrapper">
+							<input id="agent-client-form-address" class="neo-input" id="input2" type="text" />
+							<button aria-label="clear input" tabindex='-1' class="neo-input-edit__icon neo-icon-end" onclick="$('#form-address').val('');return false;"></button>
+						</div>
+					</div>
+				</div>
+				<div class="neo-form-control">
+					<div class="neo-input-group">
+						<label htmlFor="input3"> Phone </label>
+						<div class="neo-input-editable__wrapper">
+							<input id="agent-client-form-phone" class="neo-input" id="input1" type="text" />
+							<button aria-label="clear input" tabindex='-1' class="neo-input-edit__icon neo-icon-end" onclick="$('#form-name').val('');return false;"></button>
+						</div>
+					</div>
+				</div>
+				<div class="neo-form-control">
+					<div class="neo-input-group">
+						<label htmlFor="input4"> Open Reason </label>
+						<div class="neo-input-editable__wrapper">
+							<input id="agent-client-form-reason" class="neo-input" id="input2" type="text" />
+							<button aria-label="clear input" tabindex='-1' class="neo-input-edit__icon neo-icon-end" onclick="$('#form-address').val('');return false;"></button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="customer_profile_2" style="margin-left: 50px; width: 380px;">
+			<p>Customer Photo</p>
+			<div style="padding: 5px; width: 200px; height: 120px; background-color: #fff;">
+				<img id="customer_photo" src="engagement/images/blank.png" style="width: 100%; height: 100%;" />
+			</div>
+			<br />
+			<p>Signature</p>
+			<div style="padding: 5px; width: 200px; height: 120px; background-color: #fff;">
+				<img id="customer_signature" src="engagement/images/blank.png" style="width: 100%; height: 100%;" />
+			</div>
+			<!-- button id="open-account-completion" class="neo-btn neo-btn-primary neo-btn-primary--warning" style="margin-top: 10px;">Completion</button -->
+		</div>
+	</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+	integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous"
+	referrerpolicy="no-referrer" type="text/javascript"></script>
+
+<script>
+	$("#application-form").click(() => {
+		events.launch('emit_event', { header: _header(cmsp.client), body: { type: "application-form" } });
+		$('#application-form').removeClass('neo-pulse');
+		$('#photo-shot').removeClass('neo-pulse');
+		$('#signature').removeClass('neo-pulse');
+		$('#notification').removeClass('neo-pulse');
+		$('#contract').removeClass('neo-pulse');
+		$('#application-form').addClass('neo-pulse');
+	});
+	$("#photo-shot").click(() => {
+		events.launch('emit_event', { header: _header(cmsp.client), body: { type: "photo-shot" } });
+		$('#application-form').removeClass('neo-pulse');
+		$('#photo-shot').removeClass('neo-pulse');
+		$('#signature').removeClass('neo-pulse');
+		$('#notification').removeClass('neo-pulse');
+		$('#contract').removeClass('neo-pulse');
+		$('#photo-shot').addClass('neo-pulse');
+	});
+	$("#signature").click(() => {
+		events.launch('emit_event', { header: _header(cmsp.client), body: { type: "signature" } });
+		$('#application-form').removeClass('neo-pulse');
+		$('#photo-shot').removeClass('neo-pulse');
+		$('#signature').removeClass('neo-pulse');
+		$('#notification').removeClass('neo-pulse');
+		$('#contract').removeClass('neo-pulse');
+		$('#signature').addClass('neo-pulse');
+	});
+	$("#notification").click(() => {
+		events.launch('emit_event', { header: _header(cmsp.client), body: { type: "notification" } });
+		$('#application-form').removeClass('neo-pulse');
+		$('#photo-shot').removeClass('neo-pulse');
+		$('#signature').removeClass('neo-pulse');
+		$('#notification').removeClass('neo-pulse');
+		$('#contract').removeClass('neo-pulse');
+		$('#notification').addClass('neo-pulse');
+	});
+	$("#contract").click(() => {
+		events.launch('emit_event', { header: _header(cmsp.client), body: { type: "contract" } });
+		$('#application-form').removeClass('neo-pulse');
+		$('#photo-shot').removeClass('neo-pulse');
+		$('#signature').removeClass('neo-pulse');
+		$('#notification').removeClass('neo-pulse');
+		$('#contract').removeClass('neo-pulse');
+		$('#contract').addClass('neo-pulse');
+	});
+</script>

@@ -1,0 +1,34 @@
+
+<div class="neo-widget__body neo-widget__body" style="width: 100%; padding: 20px;">
+	<form class="neo-form">
+		<div class="neo-form-control">
+			<div class="neo-input-group">
+				<label htmlFor="input1"> Name </label>
+				<div class="neo-input-editable__wrapper">
+					<input id="form-name" class="neo-input" id="input1" type="text" />
+					<button id="form-name" aria-label="clear input" tabindex='-1' class="neo-input-edit__icon neo-icon-end"></button>
+				</div>
+			</div>
+			<br />
+			<div class="neo-input-group">
+				<label htmlFor="input1"> Address </label>
+				<div class="neo-input-editable__wrapper">
+					<input id="form-address" class="neo-input" id="input1" type="text" />
+					<button aria-label="clear input" tabindex='-1' class="neo-input-edit__icon neo-icon-end"></button>
+				</div>
+			</div>
+			<br />
+		</div>
+	</form>
+
+	<button id="form-done" class="neo-btn neo-btn-primary neo-btn-primary--default">Done</button>
+	<script>
+		$("#form-done").click(() => {
+			events.launch('emit_data', { header: header(cmsp.client.userId, cmsp.client.room, cmsp.client.type, cmsp.client.mode, "chat", ""), body: { media: { type: "dialog", dialog: { messages: [] } } } });
+		});		
+		$("#form-name").change(() => {
+			events.launch('emit_data', { header: header(cmsp.client.userId, cmsp.client.room, cmsp.client.type, cmsp.client.mode, "chat", ""), body: { media: { type: "form", form: [{key:"form-name", value:$("#form-name").val()},{key:"form-address", value:$("#form-address").val()}] } } });
+		});
+	</script>
+
+</div>

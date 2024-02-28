@@ -1,0 +1,84 @@
+<!-- CHAT -->
+<div id="form-chat" class="form-chat" style="width: 100%; height: 650px;">
+	<div id="chat-talk" class="chat-talk"
+		style="padding-left: 5px; padding-right: 5px; width: 100%; height: calc(100% - 80px); overflow: hidden; overflow-y: auto;"></div>
+	<div class="row" style="width: 100%; height: 80px; padding-top: 15px; padding-left: 10px;">
+		<div style="width: 50px;">
+			<button id="chat-icons-btn" class="neo-btn-circle neo-btn-circle-tertiary neo-btn-circle-tertiary--info neo-icon-app-grid"
+				style="margin-top: 2px; margin-left: 10px;"></button>
+		</div>
+		<div style="width: calc(100% - 50px);">
+			<div id="chat-text" class="disp" style="margin-right: 20px;">
+				<div class="neo-input-group">
+					<div class="neo-input-editable__wrapper">
+						<input id="typetext" class="neo-input" type="text" />
+						<button id="chat-send" tabindex='-1' class="neo-btn-circle neo-btn-circle-tertiary neo-btn-circle-tertiary--info neo-icon-arrow-up"></button>
+					</div>
+				</div>
+			</div>
+			<div id="chat-icons" class="nodisp" style="width: 400px; padding-left: 20px;">
+				<div class="row">
+					<div id="chat-menu1" style="width: 45px; height: 45px; float: left;">
+						<img src="interaction/images/ic_smile.png" style="width: 100%; height: 100%;" />
+					</div>
+					<div id="chat-menu2" style="width: 45px; height: 45px; float: left;">
+						<img src="interaction/images/ic_normal.png" style="width: 100%; height: 100%;" />
+					</div>
+					<div id="chat-menu3" style="width: 45px; height: 45px; float: left;">
+						<img src="interaction/images/ic_depress.png" style="width: 100%; height: 100%;" />
+					</div>
+				</div>
+			</div>
+			<script>
+						$("#chat-icons-btn").click(() => {
+							$("#chat-text").hide();
+							$("#chat-icons").show();
+						});
+						$("#chat-icons").click(() => {
+							$("#chat-icons").hide();
+							$("#chat-text").show();
+						});
+					</script>
+		</div>
+	</div>
+</div>
+
+<!-- LIVE CAMERA STREAM -->
+<div id="form-stream" class="nodisp" style="position: relative;">
+	<div id="view-video-remote" style="position: absolute; top: 0px; left: 0px; width: 100%; padding: 5px;">
+		<video id="RemoteVideoMedia" autoplay playsinline width="100%"></video>
+	</div>
+	<div id="view-video-local" style="position: absolute; top: 0px; right: 0px; width: 30%; padding: 5px;">
+		<video id="LocalVideoMedia" autoplay playsinline width="100%" style="border: 1px solid #ffffff;"></video>
+	</div>
+</div>
+
+<!-- IMAGE DISPLAY -->
+<div id="form-canvas" class="nodisp" style="width: 100%; height: 700px;">
+	<div style="padding: 5px; width: 100%;">
+		<canvas id="imagePad" style="width: 100%;"></canvas>
+		<div class="row">
+			<div style="margin: 20px; display: inline-block; height: 30px;">
+				<form id="form-fileupload" class="nodisp" action="upload" method="post" enctype="multipart/form-data" target="_dummy">
+					<input id="fileUpload" class="neo-btn neo-btn--compact neo-btn-secondary neo-btn-secondary--primary" type="file" name="filetoupload"
+						accept="image/*,video/*" />
+				</form>
+			</div>
+			<iframe name="_dummy" style="width: 0px; height: 0px; border: 0px;"></iframe>
+			<div style="padding-left: 430px; padding-top: 25px;">
+				<button id="image-send" class="neo-btn-circle neo-btn-circle-tertiary neo-btn-circle-tertiary--info neo-icon-arrow-up" aria-label="Canvas"
+					style="margin-right: 10px;"></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- VIDEO PLAY -->
+<div id="form-video" class="nodisp" style="width: 100%; height: 700px;">
+	<video id="mediaPlayer" autoplay playsinline style="width: 100%;"></video>
+</div>
+
+<!-- FORM APPLY-->
+<div id="form-apply" class="nodisp" style="width: 100%; height: 700px;"></div>
+
+

@@ -1,0 +1,223 @@
+.acceptAudioCallBtn, #servicesPanel, .acceptVideoCallBtn, .ignoreCallBtn, #conversationPanel, #collaborationServiceTab,
+.callControlBtns, .endCallBtn, .callIncomingBtns, .unmuteBtn, .unholdBtn, .unmuteAllBtn, .endSharingBtn,
+.callPanelTitle, .conferenceControlBtns, #deleteAttachmentBtn ,.unblockVideoBtn, .unlockConferenceBtn,
+.conferencePanelTitle, .confMessagesPanel, #saveContact, #addContact, #deleteContact {
+    display: none;
+}
+
+.versions, .makeCallForm, .callConfigForm, .deviceServicesConfigForm, .messagingConfigForm, #makeCall {
+    margin-top: 15px;
+}
+
+.startCallOptions {
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.callPanel, .dialButtons, .rosterPanel {
+    display: none;
+    margin-top: 15px;
+}
+
+.rosterPanel .panel-body, .confMessagesPanel .panel-body {
+    height: 310px;
+    overflow: auto;
+}
+
+.contactsPanel, .messagingPanel{
+    margin: 15px 0;
+}
+
+.searchPanel.input-group, .messagingPanel.input-group {
+    padding-left: 15px;
+}
+
+.conversationListPanelBody {
+    height: 395px;
+    overflow: auto;
+}
+
+#conversationChat {
+    height: 300px;
+    overflow: auto;
+}
+
+.dialpadTextBox {
+    display: block;
+    padding: 10px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.callControlBtns {
+    margin-top: 25px;
+}
+
+.videoPanel {
+    margin-top: 15px;
+    position: relative;
+    display: none;
+}
+
+.remoteVideo {
+    width: 100%;
+}
+
+.callInformation {
+    width: 60%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.callWithAddressWithLocalVideo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.localVideo {
+    width: 40%;
+    bottom: 5px;
+}
+
+.versionTitle {
+    width: 100px;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.aboutTitle {
+    margin-bottom: 15px;
+}
+
+.glyphicon {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.glyphicon-remove {
+    margin-top: 1px;
+}
+
+.glyphicon-ok:hover,
+.glyphicon-remove:hover {
+    color: #70a3cc;
+    cursor:pointer;
+}
+
+.message-bubble {
+    padding: 10px 0 10px 0;
+}
+
+.message-bubble:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+.message-bubble > * {
+    padding-left: 10px;
+}
+
+.confMessagesPanel .panel-body {
+    padding: 0 15px;
+}
+
+.chatLabel {
+    margin-left: 5px;
+}
+
+.chatTime {
+    margin-right: 10px;
+}
+
+.btn-link {
+    padding: 0 12px;
+}
+
+.presenceTh {
+    width: 5%;
+}
+
+.presenceTh > .glyphicon {
+    font-size: 20px;
+}
+
+.editTh {
+    width: 20%;
+}
+
+.presenceLegend {
+    padding: 0 30px;
+    margin-bottom: 15px;
+}
+
+.unknown, .doNotDisturb, .outOfOffice, .offline {
+    color: #FF0000;
+    font-size: 13px;
+    word-spacing: -10px;
+}
+
+.unspecified, .onACall, .busy, .away {
+    color: #ffcc00;
+    font-size: 13px;
+    word-spacing: -10px;
+}
+
+.available {
+    color: #008000;
+    font-size: 13px;
+    word-spacing: -10px;
+}
+
+.attachmentButtons {
+    height: 30px;
+    margin: 5px 0;
+}
+
+#errorLog {
+    height: 200px;
+    overflow: auto;
+}
+
+.message-bubble img {
+    width: 90%;
+}
+
+.message-bubble video {
+    width: 90%;
+}
+
+.collaborationCanvas {
+    overflow: auto;
+    height: 700px;
+}
+
+.collaborationCanvas .konvajs-content {
+    margin: 0 auto;
+    border: 1px solid #000000;
+}
+
+.collaborationPanel{
+    margin: 10px 0;
+}
+
+#collaborationService .panel:first-child{
+    margin-top: 15px;
+}
+
+.viewHeader{
+    cursor: pointer;
+}
+
+.viewHeader.selected .icon-down,
+.viewHeader .icon-up{
+    display:none;
+}
+
+.viewHeader.selected .icon-up{
+    display:inline-block;
+}
+
+.callHeader .callState{
+    margin-left:15px;
+    font-size: 1.1em;
+}

@@ -1,0 +1,60 @@
+<!--  Chat Client Settings -->
+<div class="neo-modal__background"></div>
+<div class="neo-modal__content" aria-modal="true" role="dialog">
+	<div class="neo-modal__info-close">
+		<button class="neo-close" onclick="$('#settings').hide();"></button>
+	</div>
+	<div class="neo-modal__header">
+		<h4>Webchat Settings</h4>
+	</div>
+	<div class="neo-modal__body">
+		<form class="neo-form">
+			<div class="neo-form-control">
+				<div class="neo-input-group">
+					<div class="neo-input-hint" style="margin-top: 5px;">Dialogflow Agent Id</div>
+					<div class="neo-input-editable__wrapper" style="border: none;">
+						<input id="agentId" placeholder="" aria-label="textInput" role="textbox" value=""
+							style="padding: 5px; background-color: #eee;" />
+					</div>
+					<div class="neo-input-hint" style="margin-top: 5px;">Dialogflow Language Code</div>
+					<div class="neo-input-editable__wrapper" style="border: none;">
+						<input id="languageCode" placeholder="" aria-label="textInput" role="textbox" value=""
+							style="padding: 5px; background-color: #eee;" />
+					</div>
+					<div class="neo-input-hint" style="margin-top: 5px;">Translation Language Code</div>
+					<div class="neo-input-editable__wrapper" style="border: none;">
+						<input id="transLangCode" placeholder="" aria-label="textInput" role="textbox" value=""
+							style="padding: 5px; background-color: #eee;" />
+					</div>
+					<div class="neo-input-hint" style="margin-top: 20px;">AXP Account Id</div>
+					<div class="neo-input-editable__wrapper" style="border: none;">
+						<input id="accountId" type="password" placeholder="" aria-label="textInput" role="textbox" value=""
+							style="padding: 5px; background-color: #eee;" />
+					</div>
+					<div class="neo-input-hint" style="margin-top: 5px;">AXP Provider Id</div>
+					<div class="neo-input-editable__wrapper" style="border: none;">
+						<input id="providerId" type="password" placeholder="" aria-label="textInput" role="textbox" value=""
+							style="padding: 5px; background-color: #eee;" />
+					</div>
+					<div class="neo-input-hint" style="margin-top: 5px;">AXP Client Id</div>
+					<div class="neo-input-editable__wrapper" style="border: none;">
+						<input id="clientId" type="password" placeholder="" aria-label="textInput" role="textbox" value=""
+							style="padding: 5px; background-color: #eee;" />
+					</div>
+					<div class="neo-input-hint" style="margin-top: 5px;">
+						AXP Client Secret <font color=red>**CONFIDENTIAL**</font>
+					</div>
+					<div class="neo-input-editable__wrapper" style="border: none;">
+						<input id="clientSecret" type="password" placeholder="" aria-label="textInput" role="textbox" value=""
+							style="padding: 5px; background-color: #eee;" />
+					</div>
+				</div>
+			</div>
+			<div class="neo-nav--right" style="margin-top: 30px;">
+				<button id="saveSettings" type="button"
+					class="neo-btn neo-btn-primary neo-btn-primary--default neo-center neo-icon-check">Update</button>
+			</div>
+		</form>
+	</div>
+</div>
+<script src="settings.js" type="text/javascript"></script>

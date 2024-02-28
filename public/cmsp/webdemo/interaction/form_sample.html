@@ -1,0 +1,57 @@
+
+<div class="neo-widget__body neo-widget__body" style="width: 100%; padding: 20px;">
+	<form class="neo-form">
+		<div class="neo-form-control">
+			<div class="neo-input-group">
+				<label htmlFor="input1"> Name </label>
+				<div class="neo-input-editable__wrapper">
+					<input id="form-name" class="neo-input" id="input1" type="text" />
+					<button aria-label="clear input" tabindex='-1' class="neo-input-edit__icon neo-icon-end" onclick="$('#form-name').val('');return false;"></button>
+				</div>
+			</div>
+			<br />
+			<div class="neo-input-group">
+				<label htmlFor="input2"> Address </label>
+				<div class="neo-input-editable__wrapper">
+					<input id="form-address" class="neo-input" id="input2" type="text" />
+					<button aria-label="clear input" tabindex='-1' class="neo-input-edit__icon neo-icon-end" onclick="$('#form-address').val('');return false;"></button>
+				</div>
+			</div>
+			<br />
+		</div>
+	</form>
+
+	<button id="form-done" class="neo-btn neo-btn-primary neo-btn-primary--default">Done</button>
+	<script>
+	$("#form-done").click(() => {
+		events.launch('emit_event', { header: header(cmsp.client), body: { type: "dialog", customerId: cmsp.client.room, agentId: cmsp.client.userId } });
+	});		
+	
+	sendForm = (field) => {
+		events.launch('emit_data', { header: header(cmsp.client), body: { media: { type: "form", form: [{field:"form-name", data:$("#form-name").val()},{field:"form-address", data:$("#form-address").val()}], field:field } } });
+	};
+	
+	$("#form-name").change(() => {
+		sendForm("form-name");
+	});
+	
+	$("#form-address").change(() => {
+		sendForm("form-address");
+	});
+	
+	events.action("data", async (message) => {
+		console.log(`[events.action("data")] ${JSON.stringify(message)}`);
+		switch (message.body.media.type) {
+			case "form": {
+				if (cmsp.client.userId !== message.header.userId) {
+					message.body.media.form.forEach((item) => {
+						$("#" + item.field).val(item.data);
+					});
+				}
+				break;
+			}
+		}
+	});
+	</script>
+
+</div>

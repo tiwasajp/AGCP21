@@ -1,0 +1,56 @@
+
+<div id="widget-engagement" class="disp" style="position: fixed; top: 62px; left: 560px; width: 945px; height: 765px; overflow: hidden; overflow-y: auto;">
+	<div id="engagement-default" class="neo-widget__content disp">
+		<div class="neo-widget__header">
+			<div class="neo-widget__header-left">
+				<div class="neo-tabs" role="tablist">
+					<ul class="neo-tabs__nav">
+						<li id="item_1" class="neo-tabs__item neo-tabs__item--active" tabindex="0"><a id="a_1" role="tab" aria-selected="true">Agent Assist</a></li>
+						<li id="item_2" class="neo-tabs__item" tabindex="0"><a id="a_2" role="tab">Customer Journey</a></li>
+						<li id="item_3" class="neo-tabs__item" tabindex="0"><a id="a_3" role="tab">Contact Analysis</a></li>
+						<li id="item_4" class="neo-tabs__item" tabindex="0"><a id="a_4" role="tab">Actions to take</a></li>
+						<li id="item_5" class="neo-tabs__item" tabindex="0"><a id="a_5" role="tab">Natural Language/Vision API</a></li>
+						<li id="item_6" class="neo-tabs__item" tabindex="0"><a id="a_6" role="tab">Transaction Log</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="neo-widget__body neo-widget__body">
+			<br />
+
+			<div id="tab_1" class="" style="width: 100%; height: 680px; overflow: hidden;">
+				<div style="margin-left: 20px; width: 100%; height: 220px;">{{agent_assist}}</div>
+				<div style="margin-left: 20px; margin-top: 40px; width: 100%; height: 420px;">{{registration_form}}</div>
+			</div>
+
+			<div id="tab_2" class="nodisp" style="width: 100%; height: 680px; overflow: hidden;">
+				<div>{{engagements_list}}</div>
+			</div>
+
+			<div id="tab_3" class="nodisp" style="position: relative; width: 100%; height: 680px; overflow: hidden;">
+				<div id="engagement_analysis_chart1" class="nodisp"
+					style="position: absolute; top: 20px; left: 100px; width: 600px; height: 600px; padding: 20px; border: solid 1px #bbb; box-shadow: 5px 5px 5px #999; background-color: #FFF;"
+					onclick="$('#engagement_analysis_chart1').hide();">
+					<canvas id="myChart" width="100%" height="100px"></canvas>
+				</div>
+				<div style="width: 100%; height: 680px; margin-top: 0px; border: solid 1px #eee; overflow-y: auto;" onclick="$('#engagement_analysis_chart1').show();">
+					<div style="float: left; width: 100%; height: auto; margin-bottom: 10px; border: solid 1px #eee; font-size: 12px;">{{engagement_analysis}}</div>
+				</div>
+			</div>
+
+			<div id="tab_4" class="nodisp" style="width: 100%; height: 680px; overflow: hidden;">
+				<div style="width: 100%; height: 700px; overflow: hidden; overflow-y: auto;">{{contact_flow}}</div>
+			</div>
+
+			<div id="tab_5" class="nodisp" style="width: 100%; height: 680px; overflow: hidden; overflow-y: auto;">
+				<div style="width: 100%; height: 680px;">{{ccai}}</div>
+			</div>
+
+			<div id="tab_6" class="nodisp" style="width: 100%; height: 680px; overflow: hidden;">
+				<div style="width: 100%; height: 680px; overflow: hidden; overflow-y: auto;">{{messages}}</div>
+			</div>
+
+		</div>
+	</div>
+</div>
